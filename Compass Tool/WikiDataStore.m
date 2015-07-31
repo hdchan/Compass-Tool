@@ -7,7 +7,7 @@
 //
 
 #import "WikiDataStore.h"
-#import "WikiAPI.h"
+#import "WikiAPIClient.h"
 
 @implementation WikiDataStore
 

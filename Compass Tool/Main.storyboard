@@ -51,12 +51,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Speed: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMx-nV-bwQ">
-                                        <rect key="frame" x="0.0" y="165" width="600" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50588235290000005" green="0.79215686269999996" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -64,11 +58,8 @@
                                     <constraint firstItem="oRb-yN-Ud3" firstAttribute="top" secondItem="a6l-3a-G9N" secondAttribute="bottom" constant="8" id="5bf-hY-8Ty"/>
                                     <constraint firstAttribute="width" secondItem="afO-yn-8qp" secondAttribute="width" id="5cP-sC-pyp"/>
                                     <constraint firstItem="afO-yn-8qp" firstAttribute="top" secondItem="YAR-OF-MKI" secondAttribute="top" constant="20" id="AOJ-Jw-Ay7"/>
-                                    <constraint firstItem="bMx-nV-bwQ" firstAttribute="top" secondItem="So4-CR-n8j" secondAttribute="bottom" constant="8" id="BWo-u7-wHZ"/>
-                                    <constraint firstAttribute="width" secondItem="bMx-nV-bwQ" secondAttribute="width" id="Eyl-Od-sKg"/>
                                     <constraint firstAttribute="width" secondItem="a6l-3a-G9N" secondAttribute="width" id="G71-U1-HWJ"/>
                                     <constraint firstAttribute="height" constant="200" id="Nko-s7-iqR"/>
-                                    <constraint firstAttribute="centerX" secondItem="bMx-nV-bwQ" secondAttribute="centerX" id="Qeo-uf-Sf6"/>
                                     <constraint firstItem="Thl-Up-2po" firstAttribute="top" secondItem="oRb-yN-Ud3" secondAttribute="bottom" constant="8" id="VUP-lB-jCf"/>
                                     <constraint firstAttribute="centerX" secondItem="Thl-Up-2po" secondAttribute="centerX" id="Ymb-Yz-xNs"/>
                                     <constraint firstAttribute="width" secondItem="Thl-Up-2po" secondAttribute="width" id="cOQ-Nl-RBU"/>
@@ -100,18 +91,51 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Compass" id="ANa-6x-muf"/>
                     <connections>
-                        <outlet property="compass" destination="4YR-lx-vNm" id="zaF-7z-ReX"/>
-                        <outlet property="currentLatLng" destination="oRb-yN-Ud3" id="owJ-OS-wBj"/>
-                        <outlet property="currentSpeed" destination="bMx-nV-bwQ" id="HAY-7Y-5jO"/>
-                        <outlet property="destinationLatLng" destination="Thl-Up-2po" id="P5i-PN-Wap"/>
-                        <outlet property="distanceRemianing" destination="So4-CR-n8j" id="1Z2-Jz-ODc"/>
-                        <outlet property="magneticHeading" destination="afO-yn-8qp" id="AYh-Kz-zHD"/>
-                        <outlet property="trueHeading" destination="a6l-3a-G9N" id="b3r-c4-pny"/>
+                        <outlet property="compassImageView" destination="4YR-lx-vNm" id="dWy-Pm-2lc"/>
+                        <outlet property="currentLatLngLabel" destination="oRb-yN-Ud3" id="kl2-3n-aXf"/>
+                        <outlet property="destinationLatLngLabel" destination="Thl-Up-2po" id="pjD-Pc-syH"/>
+                        <outlet property="distanceRemianingLabel" destination="So4-CR-n8j" id="dje-Uu-WoM"/>
+                        <outlet property="magneticHeadingLabel" destination="afO-yn-8qp" id="CHE-Cc-XyJ"/>
+                        <outlet property="trueHeadingLabel" destination="a6l-3a-G9N" id="ehB-Ro-Vjc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="359"/>
+            <point key="canvasLocation" x="129" y="674"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="5vv-dz-ni5">
+            <objects>
+                <viewController id="J4v-Nd-QkM" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jc2-oD-eXo"/>
+                        <viewControllerLayoutGuide type="bottom" id="oYg-AM-jcf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m4m-xv-T9G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvd-K6-ZmQ" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.50588235290000005" green="0.79215686269999996" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dvd-K6-ZmQ" firstAttribute="height" secondItem="m4m-xv-T9G" secondAttribute="height" id="41t-Cc-oKS"/>
+                            <constraint firstItem="Dvd-K6-ZmQ" firstAttribute="width" secondItem="m4m-xv-T9G" secondAttribute="width" id="58X-wi-tJ9"/>
+                            <constraint firstAttribute="centerY" secondItem="Dvd-K6-ZmQ" secondAttribute="centerY" id="oho-6a-m4a"/>
+                            <constraint firstAttribute="centerX" secondItem="Dvd-K6-ZmQ" secondAttribute="centerX" id="zKG-Ka-pCv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="gD0-hy-5Hn"/>
+                    <connections>
+                        <outlet property="mapView" destination="Dvd-K6-ZmQ" id="YN8-iH-ia9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iy-e5-jqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427" y="645"/>
         </scene>
         <!--Wiki-->
         <scene sceneID="EVU-EO-cN5">
@@ -198,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJD-Gr-6eZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="1322"/>
+            <point key="canvasLocation" x="775" y="784"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RED-xa-QPZ">
@@ -213,11 +237,12 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="9Xs-PS-voI"/>
                         <segue destination="bSz-Cb-eVT" kind="relationship" relationship="viewControllers" id="011-BB-uS5"/>
+                        <segue destination="J4v-Nd-QkM" kind="relationship" relationship="viewControllers" id="zqx-EM-bYR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLf-Km-ujA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="577" y="428"/>
+            <point key="canvasLocation" x="767" y="-41"/>
         </scene>
     </scenes>
     <resources>

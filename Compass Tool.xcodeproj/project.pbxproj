@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		72940E3E1B6B0BD500C2252B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72940E3D1B6B0BD500C2252B /* MapViewController.m */; };
+		72940E411B6BB3F100C2252B /* DestinationDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 72940E401B6BB3F100C2252B /* DestinationDataStore.m */; };
+		72940E441B6BF4B700C2252B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 72940E431B6BF4B700C2252B /* Constants.m */; };
 		7298CC791B6922E2008BEF71 /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7298CC781B6922E2008BEF71 /* WikiViewController.m */; };
 		72DD7B271B68278900C0D36D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B261B68278900C0D36D /* main.m */; };
 		72DD7B2A1B68278900C0D36D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B291B68278900C0D36D /* AppDelegate.m */; };
@@ -37,6 +39,10 @@
 		16643EA867204CDD98DBF437 /* libPods-Compass Tool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Compass Tool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72940E3C1B6B0BD500C2252B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		72940E3D1B6B0BD500C2252B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		72940E3F1B6BB3F100C2252B /* DestinationDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationDataStore.h; sourceTree = "<group>"; };
+		72940E401B6BB3F100C2252B /* DestinationDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationDataStore.m; sourceTree = "<group>"; };
+		72940E421B6BF4B700C2252B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		72940E431B6BF4B700C2252B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		7298CC771B6922E2008BEF71 /* WikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewController.h; sourceTree = "<group>"; };
 		7298CC781B6922E2008BEF71 /* WikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewController.m; sourceTree = "<group>"; };
 		72DD7B211B68278900C0D36D /* Compass Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compass Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +120,8 @@
 			children = (
 				72DD7B281B68278900C0D36D /* AppDelegate.h */,
 				72DD7B291B68278900C0D36D /* AppDelegate.m */,
+				72940E3F1B6BB3F100C2252B /* DestinationDataStore.h */,
+				72940E401B6BB3F100C2252B /* DestinationDataStore.m */,
 				72DD7B4A1B6827A200C0D36D /* CompassViewController.h */,
 				72DD7B4B1B6827A200C0D36D /* CompassViewController.m */,
 				7298CC771B6922E2008BEF71 /* WikiViewController.h */,
@@ -126,6 +134,8 @@
 				72F9A3251B6942FA00E8494F /* WikiArticle.m */,
 				72940E3C1B6B0BD500C2252B /* MapViewController.h */,
 				72940E3D1B6B0BD500C2252B /* MapViewController.m */,
+				72940E421B6BF4B700C2252B /* Constants.h */,
+				72940E431B6BF4B700C2252B /* Constants.m */,
 				72DD7B4C1B6827A200C0D36D /* Main.storyboard */,
 				72DD7B311B68278900C0D36D /* Images.xcassets */,
 				72DD7B331B68278900C0D36D /* LaunchScreen.xib */,
@@ -308,8 +318,10 @@
 				72F9A3261B6942FA00E8494F /* WikiArticle.m in Sources */,
 				72940E3E1B6B0BD500C2252B /* MapViewController.m in Sources */,
 				72F9A3201B6928FF00E8494F /* WikiDataStore.m in Sources */,
+				72940E441B6BF4B700C2252B /* Constants.m in Sources */,
 				72DD7B2A1B68278900C0D36D /* AppDelegate.m in Sources */,
 				7298CC791B6922E2008BEF71 /* WikiViewController.m in Sources */,
+				72940E411B6BB3F100C2252B /* DestinationDataStore.m in Sources */,
 				72DD7B271B68278900C0D36D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

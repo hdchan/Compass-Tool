@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Henry Chan. All rights reserved.
 //
 
-#import "WikiAPI.h"
+#import "WikiAPIClient.h"
 #import <AFNetworking/AFNetworking.h>
 
-@implementation WikiAPI
+@implementation WikiAPIClient
 
 + (void) getArticlesAroundLocation:(CLLocationCoordinate2D)coordinate radius:(CLLocationDistance)radius completion:(void(^)(NSArray*wikiArticles))completion {
     
@@ -49,6 +49,7 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         // need to implement failure
+        completion(nil);
         
     }];
     
@@ -78,6 +79,7 @@
      } failure:^(NSURLSessionDataTask *task, NSError *error) {
          
          // need to implement failure
+         completion(nil);
          
      }];
 

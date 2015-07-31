@@ -8,7 +8,7 @@
 
 #import "WikiViewController.h"
 //#import "WikiDataStore.h"
-#import "WikiAPI.h"
+#import "WikiAPIClient.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <JDStatusBarNotification/JDStatusBarNotification.h>
 #import <MCSwipeTableViewCell/MCSwipeTableViewCell.h>
@@ -49,11 +49,11 @@
 
 - (void) updateWikiArticles {
     
-    [SVProgressHUD showWithStatus:@"Updating Wiki articles"];
+    [SVProgressHUD showWithStatus:@"Updating POI"];
     
-    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(40.7061682, -74.0136262);
-    
-    [WikiAPI getArticlesAroundLocation:coordinates radius:400 completion:^(NSArray *wikiArticles) {
+//    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(40.7061682, -74.0136262);
+    CLLocationCoordinate2D coordinates = self.lastWikiUpdateLocation.coordinate;
+    [WikiAPIClient getArticlesAroundLocation:coordinates radius:400 completion:^(NSArray *wikiArticles) {
         
         self.articles = wikiArticles;
         
@@ -104,13 +104,29 @@
     
     WikiArticle *selectedArticle = self.articles[indexPath.row];
     
-    [WikiAPI getArticleExtract:selectedArticle.pageID completion:^(NSString *extract) {
-
-        self.articleTitleLabel.text = selectedArticle.title;
+    self.articleTitleLabel.text = selectedArticle.title;
+    
+    if (!selectedArticle.extract) {
+       
+        [SVProgressHUD showWithStatus:@"Retrieving Extract"];
         
-        self.articleExtractText.text = extract;
+        [WikiAPIClient getArticleExtract:selectedArticle.pageID completion:^(NSString *extract) {
+            
+            selectedArticle.extract = extract;
+            
+            self.articleExtractText.text = extract;
+            
+            [SVProgressHUD dismiss];
+            
+        }];
         
-    }];
+    } else {
+        
+        self.articleExtractText.text = selectedArticle.extract;
+        
+    }
+    
+    
     
 }
 
