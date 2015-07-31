@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B8CFBB76D1A1E228DA2A6FF"
-               BuildableName = "libPods-Compass Tool-JDStatusBarNotification.a"
-               BlueprintName = "Pods-Compass Tool-JDStatusBarNotification"
+               BlueprintIdentifier = "7C54A79304B2ADE598B35A1B"
+               BuildableName = "libPods-Compass Tool-MCSwipeTableViewCell.a"
+               BlueprintName = "Pods-Compass Tool-MCSwipeTableViewCell"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

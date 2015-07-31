@@ -5,6 +5,7 @@ target 'Compass Tool' do
 pod 'AFNetworking'
 pod 'SVProgressHUD'
 pod 'JDStatusBarNotification'
+pod 'MCSwipeTableViewCell'
 end
 
 target 'Compass ToolTests' do
