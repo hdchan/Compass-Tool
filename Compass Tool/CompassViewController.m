@@ -51,19 +51,10 @@
 
         self.currentLatLng.text = [NSString stringWithFormat:@"Current Lat: %.03f Lng: %.03f",self.locationManger.location.coordinate.latitude, self.locationManger.location.coordinate.longitude];
         
-//        double adjacent = self.currentLocation.coordinate.latitude - self.destinationLocation.coordinate.latitude;
-//        double opposite = self.currentLocation.coordinate.longitude - self.destinationLocation.coordinate.longitude;
-//        
-//        double OA = opposite / adjacent;
-//        double destinationHeading = atan(OA); // radians
-//        
         double northHeading =  -newHeading.trueHeading; // degrees
-        
-//        double destinationHeading = 0 - northOffset + destinationOffset;
         
         self.compass.transform = CGAffineTransformMakeRotation(northHeading * M_PI / 180); // Setting it to true north
     }
-    
     
 }
 
@@ -75,7 +66,7 @@
     
     self.distanceRemianing.text = [NSString stringWithFormat:@"Distance Remaining: %.04f",distance];
     
-    self.currentSpeed.text = [NSString stringWithFormat:@"Current Speed: %f", self.currentLocation.speed];
+    self.currentSpeed.text = [NSString stringWithFormat:@"Current Speed: %f", self.destinationLocation.speed];
     
 }
 

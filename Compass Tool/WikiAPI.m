@@ -11,7 +11,7 @@
 
 @implementation WikiAPI
 
-+ (void) getArticlesAroundLocation:(CLLocationCoordinate2D)coordinate completion:(void(^)(NSArray*wikiArticles))completion {
++ (void) getArticlesAroundLocation:(CLLocationCoordinate2D)coordinate radius:(CLLocationDistance)radius completion:(void(^)(NSArray*wikiArticles))completion {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -19,7 +19,7 @@
                                  @"action" : @"query",
                                  @"format" : @"json",
                                  @"list" : @"geosearch",
-                                 @"gsradius" : @100,
+                                 @"gsradius" : @(radius),
                                  @"gscoord" : [NSString stringWithFormat:@"%f|%f",coordinate.latitude, coordinate.longitude]
                                  };
     

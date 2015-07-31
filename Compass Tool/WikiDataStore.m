@@ -23,11 +23,7 @@
 
 - (void) getEntriesWithBlock:(void(^)(NSArray *wikiArticles))completion {
     
-    [WikiAPI getArticlesAroundLocation:CLLocationCoordinate2DMake(40.7061682, -74.0136262) completion:^(NSArray *wikiArticles) {
-        
-        NSLog(@"%@",wikiArticles);
-        
-    }];
+    
     
 }
 

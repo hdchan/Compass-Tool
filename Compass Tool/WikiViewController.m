@@ -9,13 +9,19 @@
 #import "WikiViewController.h"
 //#import "WikiDataStore.h"
 #import "WikiAPI.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <JDStatusBarNotification/JDStatusBarNotification.h>
+#import <MCSwipeTableViewCell/MCSwipeTableViewCell.h>
 
-@interface WikiViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface WikiViewController () <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSArray *articles;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *articleTitleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *articleExtractText;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *lastWikiUpdateLocation;
 
 @end
 
@@ -29,35 +35,69 @@
     self.articleTitleLabel.adjustsFontSizeToFitWidth = YES;
     
     self.tableView.delegate = self;
+    
     self.tableView.dataSource = self;
     
-    [WikiAPI getArticlesAroundLocation:CLLocationCoordinate2DMake(40.7061682, -74.0136262) completion:^(NSArray *wikiArticles) {
-        
-        self.articles = wikiArticles;
+    self.locationManager = [CLLocationManager new];
     
-        [self.tableView reloadData];
-    }];
+    self.locationManager.delegate = self;
+    
+    [self.locationManager startUpdatingLocation];
+
     
 }
 
+- (void) updateWikiArticles {
+    
+    [SVProgressHUD showWithStatus:@"Updating Wiki articles"];
+    
+    CLLocationCoordinate2D coordinates = CLLocationCoordinate2DMake(40.7061682, -74.0136262);
+    
+    [WikiAPI getArticlesAroundLocation:coordinates radius:400 completion:^(NSArray *wikiArticles) {
+        
+        self.articles = wikiArticles;
+        
+        [self.tableView reloadData];
+        
+        [SVProgressHUD dismiss];
+        
+    }];
+}
 
-
+#pragma mark - Table View Protocol Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.articles.count;
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (MCSwipeTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArticleCell" forIndexPath:indexPath];
+    MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ArticleCell" forIndexPath:indexPath];
     
     WikiArticle *currentArticle = self.articles[indexPath.row];
     
     cell.textLabel.text = currentArticle.title;
     
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0fm",currentArticle.distance];
+    
+    UIView *checkView = [self viewWithImageName:@"check"];
+    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+    
+    
+    [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        NSLog(@"Did swipe \"Checkmark\" cell");
+    }];
+    
     return cell;
     
+}
+
+- (UIView *)viewWithImageName:(NSString *)imageName {
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.contentMode = UIViewContentModeCenter;
+    return imageView;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,10 +107,41 @@
     [WikiAPI getArticleExtract:selectedArticle.pageID completion:^(NSString *extract) {
 
         self.articleTitleLabel.text = selectedArticle.title;
+        
         self.articleExtractText.text = extract;
         
     }];
     
 }
+
+#pragma mark - CLLocation Protocol Methods
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+   
+    CLLocation *currentLocation = (CLLocation *)[locations firstObject];
+    
+    if (!self.lastWikiUpdateLocation) {
+        
+        self.lastWikiUpdateLocation = currentLocation;
+        
+        [self updateWikiArticles];
+        
+    } else {
+        
+        double distanceFromLastWikiUpdateLocation = [currentLocation distanceFromLocation:self.lastWikiUpdateLocation];
+        
+        [JDStatusBarNotification showWithStatus:[NSString stringWithFormat:@"%fm away from last wiki update location", distanceFromLastWikiUpdateLocation]];
+        
+        if (distanceFromLastWikiUpdateLocation > 400) { // every quarter mile?
+            
+            self.lastWikiUpdateLocation = currentLocation;
+            
+            [self updateWikiArticles];
+            
+        }
+
+    }
+    
+}
+
 
 @end
