@@ -3,6 +3,8 @@
 
 target 'Compass Tool' do
 pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'JDStatusBarNotification'
 end
 
 target 'Compass ToolTests' do

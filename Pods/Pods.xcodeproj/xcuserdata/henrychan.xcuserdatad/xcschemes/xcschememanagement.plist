@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Compass Tool-JDStatusBarNotification.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Compass Tool-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Compass Tool.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3BEC616FDF83659041287E65</key>
+		<key>08F0891891DFB2E3F9B63552</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF6C0745D1EDFD31A74662FE</key>
+		<key>C2FC61FB34A4ED782F604905</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D05AF8E0106C0C19897764AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D58E1E527EEB482D7DF55FA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
