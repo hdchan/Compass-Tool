@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72940E3E1B6B0BD500C2252B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72940E3D1B6B0BD500C2252B /* MapViewController.m */; };
 		7298CC791B6922E2008BEF71 /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7298CC781B6922E2008BEF71 /* WikiViewController.m */; };
 		72DD7B271B68278900C0D36D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B261B68278900C0D36D /* main.m */; };
 		72DD7B2A1B68278900C0D36D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B291B68278900C0D36D /* AppDelegate.m */; };
@@ -16,7 +17,7 @@
 		72DD7B4D1B6827A200C0D36D /* CompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B4B1B6827A200C0D36D /* CompassViewController.m */; };
 		72DD7B4E1B6827A200C0D36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72DD7B4C1B6827A200C0D36D /* Main.storyboard */; };
 		72F9A3201B6928FF00E8494F /* WikiDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F9A31F1B6928FF00E8494F /* WikiDataStore.m */; };
-		72F9A3231B69291C00E8494F /* WikiAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F9A3221B69291C00E8494F /* WikiAPI.m */; };
+		72F9A3231B69291C00E8494F /* WikiAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F9A3221B69291C00E8494F /* WikiAPIClient.m */; };
 		72F9A3261B6942FA00E8494F /* WikiArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F9A3251B6942FA00E8494F /* WikiArticle.m */; };
 		DC8DB60B9805C0869105E021 /* libPods-Compass Tool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16643EA867204CDD98DBF437 /* libPods-Compass Tool.a */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		0D4632A4D629E7BD2AAC5D7D /* Pods-Compass Tool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Compass Tool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Compass Tool/Pods-Compass Tool.debug.xcconfig"; sourceTree = "<group>"; };
 		16643EA867204CDD98DBF437 /* libPods-Compass Tool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Compass Tool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		72940E3C1B6B0BD500C2252B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		72940E3D1B6B0BD500C2252B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		7298CC771B6922E2008BEF71 /* WikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiViewController.h; sourceTree = "<group>"; };
 		7298CC781B6922E2008BEF71 /* WikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiViewController.m; sourceTree = "<group>"; };
 		72DD7B211B68278900C0D36D /* Compass Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compass Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,8 +54,8 @@
 		72DD7B4C1B6827A200C0D36D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		72F9A31E1B6928FF00E8494F /* WikiDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiDataStore.h; sourceTree = "<group>"; };
 		72F9A31F1B6928FF00E8494F /* WikiDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiDataStore.m; sourceTree = "<group>"; };
-		72F9A3211B69291C00E8494F /* WikiAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiAPI.h; sourceTree = "<group>"; };
-		72F9A3221B69291C00E8494F /* WikiAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiAPI.m; sourceTree = "<group>"; };
+		72F9A3211B69291C00E8494F /* WikiAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiAPIClient.h; sourceTree = "<group>"; };
+		72F9A3221B69291C00E8494F /* WikiAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiAPIClient.m; sourceTree = "<group>"; };
 		72F9A3241B6942FA00E8494F /* WikiArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiArticle.h; sourceTree = "<group>"; };
 		72F9A3251B6942FA00E8494F /* WikiArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiArticle.m; sourceTree = "<group>"; };
 		D440AD773D22E15B75926ED1 /* Pods-Compass Tool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Compass Tool.release.xcconfig"; path = "Pods/Target Support Files/Pods-Compass Tool/Pods-Compass Tool.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,10 +120,12 @@
 				7298CC781B6922E2008BEF71 /* WikiViewController.m */,
 				72F9A31E1B6928FF00E8494F /* WikiDataStore.h */,
 				72F9A31F1B6928FF00E8494F /* WikiDataStore.m */,
-				72F9A3211B69291C00E8494F /* WikiAPI.h */,
-				72F9A3221B69291C00E8494F /* WikiAPI.m */,
+				72F9A3211B69291C00E8494F /* WikiAPIClient.h */,
+				72F9A3221B69291C00E8494F /* WikiAPIClient.m */,
 				72F9A3241B6942FA00E8494F /* WikiArticle.h */,
 				72F9A3251B6942FA00E8494F /* WikiArticle.m */,
+				72940E3C1B6B0BD500C2252B /* MapViewController.h */,
+				72940E3D1B6B0BD500C2252B /* MapViewController.m */,
 				72DD7B4C1B6827A200C0D36D /* Main.storyboard */,
 				72DD7B311B68278900C0D36D /* Images.xcassets */,
 				72DD7B331B68278900C0D36D /* LaunchScreen.xib */,
@@ -298,9 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72F9A3231B69291C00E8494F /* WikiAPI.m in Sources */,
+				72F9A3231B69291C00E8494F /* WikiAPIClient.m in Sources */,
 				72DD7B4D1B6827A200C0D36D /* CompassViewController.m in Sources */,
 				72F9A3261B6942FA00E8494F /* WikiArticle.m in Sources */,
+				72940E3E1B6B0BD500C2252B /* MapViewController.m in Sources */,
 				72F9A3201B6928FF00E8494F /* WikiDataStore.m in Sources */,
 				72DD7B2A1B68278900C0D36D /* AppDelegate.m in Sources */,
 				7298CC791B6922E2008BEF71 /* WikiViewController.m in Sources */,
