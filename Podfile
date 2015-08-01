@@ -7,6 +7,7 @@ pod 'SVProgressHUD'
 pod 'JDStatusBarNotification'
 pod 'MCSwipeTableViewCell'
 pod 'GoogleMaps'
+pod 'MaterialControls'
 end
 
 target 'Compass ToolTests' do
