@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A6BC2ED0DD1201DEDC8F56CC"
+               BlueprintIdentifier = "10243BA944DEA1A41B9637C1"
                BuildableName = "libPods-Compass Tool-JDStatusBarNotification.a"
                BlueprintName = "Pods-Compass Tool-JDStatusBarNotification"
                ReferencedContainer = "container:Pods.xcodeproj">

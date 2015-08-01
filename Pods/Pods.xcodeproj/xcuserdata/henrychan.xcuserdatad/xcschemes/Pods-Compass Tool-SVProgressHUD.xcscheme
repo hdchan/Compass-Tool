@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B7093E6F0F40702A1202F25"
+               BlueprintIdentifier = "6591097EB177D59A8E0A3182"
                BuildableName = "libPods-Compass Tool-SVProgressHUD.a"
                BlueprintName = "Pods-Compass Tool-SVProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FDC52BA3178B0F18FE0A78C3"
+               BlueprintIdentifier = "2C1FAB2897792AF2FE0CD34E"
                BuildableName = "libPods-Compass Tool-AFNetworking.a"
                BlueprintName = "Pods-Compass Tool-AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">

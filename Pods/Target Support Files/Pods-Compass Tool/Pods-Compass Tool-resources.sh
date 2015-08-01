@@ -60,10 +60,12 @@ install_resource()
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "${BUILT_PRODUCTS_DIR}/MaterialControls.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
   install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+  install_resource "${BUILT_PRODUCTS_DIR}/MaterialControls.bundle"
 fi
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
