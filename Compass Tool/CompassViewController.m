@@ -88,72 +88,12 @@
    
     if (self.targetLocation) {
         
-        double tarLat = self.targetLocation.coordinate.latitude;
-        double tarLng = self.targetLocation.coordinate.longitude;
+        CLLocationDegrees offsetDegress = [self offsetOfTargetLocation:self.targetLocation fromLocation:self.currentLocation];
         
-        double curLat = self.currentLocation.coordinate.latitude;
-        double curLng = self.currentLocation.coordinate.longitude;
-        
-        double deltaY = tarLat - curLat;
-        double deltaX = tarLng - curLng;
-        
-        // We need to calculate arc tan and arrange it depending on quadrant
-        // tan(θ) = Opposite / Adjacent
-        
-        // Quadrants
-        //    lat   +,+
-        // VI  |  I
-        // -------- long
-        // III | II +,-
-        
-        // Lat = y Coords
-        // Long = x Coords
-        
-        if (tarLat > curLat && tarLng > curLng) { // Quadrant I
-            
-            offset = atan(fabs(deltaX / deltaY));
-            
-//            [JDStatusBarNotification showWithStatus:@"Q1"];
-            
-        } else if (tarLat < curLat && tarLng > curLng) { // Quadrant II
-            
-            offset = (M_PI / 2) + atan(fabs(deltaY / deltaX));
-            
-//            [JDStatusBarNotification showWithStatus:@"Q2"];
-            
-        } else if (tarLat < curLat && tarLng < curLng) { // Quadrant III
-            
-            offset = M_PI + atan(fabs(deltaX / deltaY));
-            
-//            [JDStatusBarNotification showWithStatus:@"Q3"];
-            
-        } else if (tarLat > curLat && tarLng < curLng) { // Quadrant IV
-            
-            offset = (3 * M_PI / 2) + atan(fabs(deltaY / deltaX));
-            
-//            [JDStatusBarNotification showWithStatus:@"Q4"];
-            
-        } else if (tarLat > curLat && tarLng == curLng) { // Directly North
-            
-            // offset is zero for north
-            
-        } else if (tarLat < curLat && tarLng == curLng) { // Directly South
-            
-            offset = M_PI;
-            
-        } else if (tarLat == curLat && tarLng < curLng) { // Directly West
-            
-            offset = 3 * M_PI / 2;
-            
-        } else if (tarLat == curLat && tarLng > curLng) { // Directly East
-         
-            offset = M_PI / 2;
-            
-        }
+        offset = offsetDegress * M_PI / 180;
 
     }
-    
-    
+
     self.compassImageView.transform = CGAffineTransformMakeRotation(northHeading + offset);
     
     
@@ -168,6 +108,74 @@
 //    } completion:nil];
     
 
+    
+}
+
+- (CLLocationDegrees) offsetOfTargetLocation:(CLLocation *)targetLocation fromLocation:(CLLocation*)referenceLocation {
+    
+    // Give an offset in degrees away from north
+    
+    double offsetRadians = 0;
+
+    
+    double tarLat = targetLocation.coordinate.latitude;
+    double tarLng = targetLocation.coordinate.longitude;
+    
+    double curLat = referenceLocation.coordinate.latitude;
+    double curLng = referenceLocation.coordinate.longitude;
+    
+    double deltaY = tarLat - curLat;
+    double deltaX = tarLng - curLng;
+    
+    // We need to calculate arc tan and arrange it depending on quadrant
+    // tan(θ) = Opposite / Adjacent
+    
+    // Quadrants
+    //    lat   +,+
+    // VI  |  I
+    // -------- long
+    // III | II +,-
+    
+    // Lat = y Coords
+    // Long = x Coords
+    
+    if (tarLat > curLat && tarLng > curLng) { // Quadrant I
+        
+        offsetRadians = atan(fabs(deltaX / deltaY));
+        
+    } else if (tarLat < curLat && tarLng > curLng) { // Quadrant II
+        
+        offsetRadians = (M_PI / 2) + atan(fabs(deltaY / deltaX));
+        
+    } else if (tarLat < curLat && tarLng < curLng) { // Quadrant III
+        
+        offsetRadians = M_PI + atan(fabs(deltaX / deltaY));
+        
+    } else if (tarLat > curLat && tarLng < curLng) { // Quadrant IV
+        
+        offsetRadians = (3 * M_PI / 2) + atan(fabs(deltaY / deltaX));
+        
+    } else if (tarLat > curLat && deltaX == 0) { // Directly North
+        
+        // offset is zero for north
+        
+    } else if (tarLat < curLat && deltaX == 0) { // Directly South
+        
+        offsetRadians = M_PI;
+        
+    } else if (deltaY == 0 && tarLng < curLng) { // Directly West
+        
+        offsetRadians = 3 * M_PI / 2;
+        
+    } else if (deltaY == 0 && tarLng > curLng) { // Directly East
+        
+        offsetRadians = M_PI / 2;
+        
+    }
+        
+    CLLocationDegrees offsetDegress = offsetRadians * ( 180.0 / M_PI );
+    
+    return offsetDegress;
     
 }
 
