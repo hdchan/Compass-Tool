@@ -126,8 +126,6 @@
         
     }
     
-    
-    
 }
 
 #pragma mark - CLLocation Protocol Methods
