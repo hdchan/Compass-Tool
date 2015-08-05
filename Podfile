@@ -8,6 +8,7 @@ pod 'JDStatusBarNotification'
 pod 'MCSwipeTableViewCell'
 pod 'GoogleMaps'
 pod 'MaterialControls'
+pod 'SDWebImage'
 end
 
 target 'Compass ToolTests' do

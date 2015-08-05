@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Compass Tool-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Compass Tool-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>070C537F6A2F3F3D052130C7</key>
+		<key>0B148FED47E2ADECCCDA45D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>10243BA944DEA1A41B9637C1</key>
+		<key>1142B2AF12EDB47C0CC0E6A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C1FAB2897792AF2FE0CD34E</key>
+		<key>5E8F2F871E6912CAC62973EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6591097EB177D59A8E0A3182</key>
+		<key>A0008DB04F73FB3E91DDA96F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7451ADF31B7FC1EE24C95E48</key>
+		<key>A67053434306EF6EAAFF968A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8CDB057CC5C71E8EB6FF3BB4</key>
+		<key>A9334772EB40F86B260DDAA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B533AF176CBDCE66E5FE24BE</key>
+		<key>B16C3C9B275BBBB92188592B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4314C054E41AE012239566E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

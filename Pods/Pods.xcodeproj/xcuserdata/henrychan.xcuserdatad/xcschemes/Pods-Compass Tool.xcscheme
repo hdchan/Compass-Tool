@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7451ADF31B7FC1EE24C95E48"
+               BlueprintIdentifier = "A67053434306EF6EAAFF968A"
                BuildableName = "libPods-Compass Tool.a"
                BlueprintName = "Pods-Compass Tool"
                ReferencedContainer = "container:Pods.xcodeproj">
