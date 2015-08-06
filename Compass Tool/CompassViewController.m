@@ -31,7 +31,7 @@
     
     [super viewDidLoad];
 
-    self.destinationDataStore = [DestinationDataStore sharedTargetDestination];
+    self.destinationDataStore = [DestinationDataStore sharedDataStore];
     
     self.locationManger = [CLLocationManager new];
     self.locationManger.delegate = self;
@@ -55,6 +55,8 @@
     
     if (self.destinationDataStore.currentTargetDestinationType == TargetDestinationTypeNone) {
         
+        self.targetLocation = nil;
+        
         self.destinationLatLngLabel.text = @"Target destination not set...";
         
     } else if (self.destinationDataStore.currentTargetDestinationType == TargetDestinationTypeFinalLocation) {
@@ -75,6 +77,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
 
+//    NSLog(@"%@", newHeading);
+    
     self.magneticHeadingLabel.text = [NSString stringWithFormat:@"Mag Heading: %f", newHeading.magneticHeading];
     
     self.trueHeadingLabel.text = [NSString stringWithFormat:@"True Heading: %f", newHeading.trueHeading];
@@ -172,7 +176,7 @@
         offsetRadians = M_PI / 2;
         
     }
-        
+    
     CLLocationDegrees offsetDegress = offsetRadians * ( 180.0 / M_PI );
     
     return offsetDegress;
@@ -183,13 +187,13 @@
     
     self.currentLocation = (CLLocation *)[locations firstObject];
     
-    if (self.targetLocation) {
+//    if (self.targetLocation) {
+    
+    CLLocationDistance distance = [self.currentLocation distanceFromLocation:self.targetLocation];
+    
+    self.distanceRemianingLabel.text = [NSString stringWithFormat:@"Dis Remaining: %f",distance];
         
-        CLLocationDistance distance = [self.currentLocation distanceFromLocation:self.targetLocation];
-        
-        self.distanceRemianingLabel.text = [NSString stringWithFormat:@"Dis Remaining: %f",distance];
-        
-    }
+//    }
     
 }
 

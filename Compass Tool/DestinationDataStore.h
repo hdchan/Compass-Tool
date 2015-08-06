@@ -21,6 +21,6 @@ typedef enum {
 @property (nonatomic, strong) CLLocation *pointOfInterest;
 @property (nonatomic) TargetDestinationType currentTargetDestinationType;
 
-+ (instancetype)sharedTargetDestination;
++ (instancetype)sharedDataStore;
 
 @end

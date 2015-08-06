@@ -28,7 +28,13 @@
     
     self.mapView.delegate = self;
     
-    self.destinationDataStore = [DestinationDataStore sharedTargetDestination];
+    self.destinationDataStore = [DestinationDataStore sharedDataStore];
+    
+    if (self.destinationDataStore.finalLocation == nil) {
+        
+        [self.mapView clear];
+        
+    }
     
     self.mapView.mapType = kGMSTypeTerrain;
 
@@ -47,6 +53,19 @@
     
     [manager stopUpdatingLocation];
 
+}
+
+- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
+    
+    [self.mapView clear];
+    self.destinationDataStore.finalLocation = nil;
+    
+    if (self.destinationDataStore.currentTargetDestinationType == TargetDestinationTypeFinalLocation) {
+        
+        self.destinationDataStore.currentTargetDestinationType = TargetDestinationTypeNone;
+        
+    }
+    
 }
 
 -(void)mapView:(GMSMapView *)mapView didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate {

@@ -14,14 +14,14 @@
 
 @implementation DestinationDataStore
 
-+ (instancetype)sharedTargetDestination {
-    static DestinationDataStore *_sharedTargetDestination = nil;
++ (instancetype)sharedDataStore {
+    static DestinationDataStore *_sharedDataStore = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedTargetDestination = [DestinationDataStore new];
+        _sharedDataStore = [DestinationDataStore new];
     });
     
-    return _sharedTargetDestination;
+    return _sharedDataStore;
 }
 
 
