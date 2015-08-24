@@ -104,7 +104,7 @@
 //        NSArray *array = [NSArray arrayWithObject:[NSMutableDictionary dictionaryWithObject:@"filter string" forKey:@"email"]];   // you can also do same for Name key...
         NSArray *filteredarray = [imageList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(title CONTAINS[c] %@)", @".jpg"]];
         
-        NSLog(@"%@",filteredarray);
+//        NSLog(@"%@",filteredarray);
         
         completion(filteredarray);
         

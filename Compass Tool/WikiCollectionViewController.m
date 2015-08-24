@@ -118,7 +118,7 @@ static NSString * const reuseIdentifier = @"WikiCell";
                 NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/staticmap?center=%f,%f&zoom=17&size=400x400&maptype=terrain&markers=color:red%%7C%f,%f", currentArticle.coordinate.latitude, currentArticle.coordinate.longitude,currentArticle.coordinate.latitude, currentArticle.coordinate.longitude];
                 
                 
-                NSLog(@"%@",urlString);
+//                NSLog(@"%@",urlString);
                 NSURL *imageURL = [NSURL URLWithString: urlString];
                 
                 [imageView sd_setImageWithURL:imageURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {

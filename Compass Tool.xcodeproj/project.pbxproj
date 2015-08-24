@@ -13,6 +13,7 @@
 		7298CC791B6922E2008BEF71 /* WikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7298CC781B6922E2008BEF71 /* WikiViewController.m */; };
 		72A9DD9C1B6FC83300870BD7 /* WikiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A9DD9B1B6FC83300870BD7 /* WikiTableViewController.m */; };
 		72A9DD9F1B6FDE7F00870BD7 /* WikiWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A9DD9E1B6FDE7F00870BD7 /* WikiWebViewController.m */; };
+		72B572821B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B572811B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.m */; };
 		72BD73F81B71395F002E28E9 /* WikiCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BD73F71B71395F002E28E9 /* WikiCollectionViewController.m */; };
 		72DD7B271B68278900C0D36D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B261B68278900C0D36D /* main.m */; };
 		72DD7B2A1B68278900C0D36D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DD7B291B68278900C0D36D /* AppDelegate.m */; };
@@ -52,6 +53,8 @@
 		72A9DD9B1B6FC83300870BD7 /* WikiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiTableViewController.m; sourceTree = "<group>"; };
 		72A9DD9D1B6FDE7F00870BD7 /* WikiWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiWebViewController.h; sourceTree = "<group>"; };
 		72A9DD9E1B6FDE7F00870BD7 /* WikiWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiWebViewController.m; sourceTree = "<group>"; };
+		72B572801B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+DirectionOfTargetLocation.h"; sourceTree = "<group>"; };
+		72B572811B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+DirectionOfTargetLocation.m"; sourceTree = "<group>"; };
 		72BD73F61B71395F002E28E9 /* WikiCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCollectionViewController.h; sourceTree = "<group>"; };
 		72BD73F71B71395F002E28E9 /* WikiCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCollectionViewController.m; sourceTree = "<group>"; };
 		72DD7B211B68278900C0D36D /* Compass Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compass Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +136,8 @@
 				72940E401B6BB3F100C2252B /* DestinationDataStore.m */,
 				72DD7B4A1B6827A200C0D36D /* CompassViewController.h */,
 				72DD7B4B1B6827A200C0D36D /* CompassViewController.m */,
+				72B572801B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.h */,
+				72B572811B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.m */,
 				7298CC771B6922E2008BEF71 /* WikiViewController.h */,
 				7298CC781B6922E2008BEF71 /* WikiViewController.m */,
 				72A9DD9A1B6FC83300870BD7 /* WikiTableViewController.h */,
@@ -332,6 +337,7 @@
 				72DD7B4D1B6827A200C0D36D /* CompassViewController.m in Sources */,
 				72F9A3261B6942FA00E8494F /* WikiArticle.m in Sources */,
 				72BD73F81B71395F002E28E9 /* WikiCollectionViewController.m in Sources */,
+				72B572821B8AA7F200DF6A06 /* CLLocation+DirectionOfTargetLocation.m in Sources */,
 				72A9DD9C1B6FC83300870BD7 /* WikiTableViewController.m in Sources */,
 				72940E3E1B6B0BD500C2252B /* MapViewController.m in Sources */,
 				72F9A3201B6928FF00E8494F /* WikiDataStore.m in Sources */,
